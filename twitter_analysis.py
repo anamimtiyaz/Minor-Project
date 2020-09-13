@@ -1,14 +1,18 @@
 import string
 from collections import Counter
-
+import sys
 import matplotlib.pyplot as plt
 
-
+# print(sys.argv[1] + 'Dsdjasfhjhfjkhsfjsf')
 def get_tweets():
     import GetOldTweets3 as got
-    tweetCriteria = got.manager.TweetCriteria().setQuerySearch('CoronaOutbreak') \
-        .setSince("2020-01-01") \
-        .setUntil("2020-04-01") \
+    twt = ''
+    if(len(sys.argv) == 1): twt = 'CoronaOutbreak'
+    else: twt = sys.argv[1]
+    print('This plot is for - ' + twt)
+    tweetCriteria = got.manager.TweetCriteria().setQuerySearch(twt) \
+        .setSince("2019-11-01") \
+        .setUntil("2020-06-01") \
         .setMaxTweets(1000)
     # Creation of list that contains all tweets
     tweets = got.manager.TweetManager.getTweets(tweetCriteria)

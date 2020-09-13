@@ -1,8 +1,10 @@
 import string
 from collections import Counter
+import sys
 
 import matplotlib.pyplot as plt
 
+# print(sys.argv[1] + '**********************')
 # reading text file
 text = open("read.txt", encoding="utf-8").read()
 
