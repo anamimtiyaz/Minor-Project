@@ -2,7 +2,9 @@ import string
 from collections import Counter
 import sys
 import matplotlib.pyplot as plt
+import time
 
+start_time = time.time()
 # print(sys.argv[1] + 'Dsdjasfhjhfjkhsfjsf')
 def get_tweets():
     import GetOldTweets3 as got
@@ -11,7 +13,7 @@ def get_tweets():
     else: twt = sys.argv[1]
     print('This plot is for - ' + twt)
     tweetCriteria = got.manager.TweetCriteria().setQuerySearch(twt) \
-        .setSince("2019-11-01") \
+        .setSince("2020-03-01") \
         .setUntil("2020-06-01") \
         .setMaxTweets(1000)
     # Creation of list that contains all tweets
@@ -24,6 +26,7 @@ def get_tweets():
 # reading text file
 text = ""
 text_tweets = get_tweets()
+
 length = len(text_tweets)
 
 for i in range(0, length):
@@ -69,3 +72,5 @@ ax1.bar(w.keys(), w.values())
 fig.autofmt_xdate()
 plt.savefig('graph.png')
 plt.show()
+
+print("Time taken - " + time.time() - start_time)
