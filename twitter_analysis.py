@@ -4,7 +4,7 @@ import sys
 import matplotlib.pyplot as plt
 import time
 
-start_time = time.time()
+
 # print(sys.argv[1] + 'Dsdjasfhjhfjkhsfjsf')
 def get_tweets():
     import GetOldTweets3 as got
@@ -13,8 +13,8 @@ def get_tweets():
     else: twt = sys.argv[1]
     print('This plot is for - ' + twt)
     tweetCriteria = got.manager.TweetCriteria().setQuerySearch(twt) \
-        .setSince("2020-03-01") \
-        .setUntil("2020-06-01") \
+        .setSince("2019-03-01") \
+        .setUntil("2020-05-01") \
         .setMaxTweets(1000)
     # Creation of list that contains all tweets
     tweets = got.manager.TweetManager.getTweets(tweetCriteria)
@@ -73,4 +73,4 @@ fig.autofmt_xdate()
 plt.savefig('graph.png')
 plt.show()
 
-print("Time taken - " + time.time() - start_time)
+# print("Time taken - " + time.time() - start_time)

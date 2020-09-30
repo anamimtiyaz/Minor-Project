@@ -1,2 +1,3 @@
 # Minor-Project
-Minor Project Sentimental analysis test on a random dataset
+Minor Project Sentimental analysis test on a random dataset.
+Merging PR
