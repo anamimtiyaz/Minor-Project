@@ -4,8 +4,9 @@ import sys
 import matplotlib.pyplot as plt
 import time
 
+start_time = time().time
 
-# print(sys.argv[1] + 'Dsdjasfhjhfjkhsfjsf')
+print(sys.argv[1])
 def get_tweets():
     import GetOldTweets3 as got
     twt = ''
@@ -73,4 +74,4 @@ fig.autofmt_xdate()
 plt.savefig('graph.png')
 plt.show()
 
-# print("Time taken - " + time.time() - start_time)
+print("Time taken - " + time.time() - start_time)
